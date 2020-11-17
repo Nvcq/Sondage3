@@ -8,20 +8,9 @@
     <title>Accueil</title>
 </head>
 <body>
-    <header>
-        <nav>
-        <ul>
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#news">Resultats</a></li>
-            <li><a href="#contact">Amis</a></li>
-            <li><a href="#about">Sondage</a></li>
-            <li><a href="#about">Connexion</a></li>
-            <li><a href="#about">Inscription</a></li>
-          </ul>
-        </nav>
-    </header>
+<?php include 'header.php';?>
     <main>
-        <section>
+        <section class="section1">
             <h1>Bienvenue sur votre site de sondage préféré. </h1>
             <h2> Nos derniers sondages phares</h2>
           <article>
@@ -43,6 +32,27 @@
               </div>
 
           </article>  
+        </section>
+        <section class="section2">
+          <h2> Regarder à quoi joue vos amis... </h2>
+          <article>
+            <div class="sondage">
+            
+              <div class="questions">
+              <img src="style/img/NBA.png">
+              <img>
+              <p>QUI VA GAGNER LA SAISON 2021</p>
+            </div>
+            <div class="questions">
+                <img src="style/img/Roland_garos.png">
+                <p>QUI VA GAGNER LA SAISON 2021</p>
+              </div>
+              <div class="questions">
+                <img src="style/img/PSG.png">
+                <p>QUI VA GAGNER LA SAISON 2021</p>
+              </div>
+              </div>
+          </article>
         </section>
         
     </main>
