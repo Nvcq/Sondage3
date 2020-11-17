@@ -90,6 +90,19 @@ padding: 30px;
     top: 5px;
 }
 
+footer{
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    color:#ff005E;
+ 
+}
+footer p {
+    padding: 50px;
+    font-size: 2em;
+}
+
 /*---------- PAGE CONNECT --------*/
 #fond{
     background: linear-gradient(to bottom right,#f0da4b,#ff005E); 
