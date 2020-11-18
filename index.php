@@ -40,15 +40,28 @@
             
               <div class="questions">
               <img src="style/img/NBA.png">
-              <img>
+              <div class="amis">
+                <img src="style/img/man.jpg" >
+                <p>Thomas à répondu</p>
+            </div>
+            
               <p>QUI VA GAGNER LA SAISON 2021</p>
             </div>
             <div class="questions">
                 <img src="style/img/Roland_garos.png">
+                <div class="amis">
+                <img src="style/img/mamie.png" >
+                <p>Mamie à répondu</p>
+            </div>
                 <p>QUI VA GAGNER LA SAISON 2021</p>
               </div>
               <div class="questions">
                 <img src="style/img/PSG.png">
+                <div class="amis">
+                <img src="style/img/mamie.png" >
+                <img src="style/img/man.jpg" >
+                <p>Mamie + 1 autre personne à répondu</p>
+            </div>
                 <p>QUI VA GAGNER LA SAISON 2021</p>
               </div>
               </div>
