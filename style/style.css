@@ -231,3 +231,46 @@ background-color: white;
     padding: 30px;
     
 }
+
+
+/*------------------ PROFIL ----------------*/
+
+
+.profil{
+    display: flex;
+    flex-wrap: wrap;
+}
+.profil h1{
+    width: 100%;
+}
+.modif{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
+.infoProfil{
+    text-align: center;
+    margin:40px;
+    padding: 60px;
+    width: 50%;
+}
+.infoProfil p{
+    padding: 30px;
+}
+.modif input{
+
+    width: 40%;
+    margin: auto;
+    margin-bottom: 40px;
+  
+}
+.modif button{
+    width: 40%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+.modifProfil{
+    text-align: center;
+    margin-top: 97px;
+    width: 50%;
+}
