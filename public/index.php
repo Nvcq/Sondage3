@@ -1,12 +1,9 @@
 <?php
 
-//use Controller\Demo;
-// use Controller\HomeController;
-
 require '../vendor/autoload.php';
+require("../configuration/config.php");
+
+session_start();
+
 
 require '../router.php';
-
-//new Demo();
-
-//require '../router.php';

@@ -11,7 +11,8 @@
             "Controller\\": "src/controllers",
             "Model\\": "src/models",
             "Core\\": "core",
-            "Core\\Controller\\": "core/controller"
+            "Core\\Controller\\": "core/controller",
+            "Core\\Model\\": "core/model",
         }
     },
     "require": {}
