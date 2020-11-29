@@ -8,7 +8,7 @@
     <title>Résultat</title>
 </head>
 <body>
-<?php include 'header.php';?>
+<?php require('inc/header.php') ;?>
 
 <main>
     <section class="section1">
@@ -157,7 +157,7 @@
 </section>
 </main>
     
- <?php include 'footer.php' ?>
+ <?php require('inc/footer.php') ;?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>

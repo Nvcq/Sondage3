@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <?php include 'header.php';?>
+<?php include 'header.php' ?>
   <main>
     <section class="section1">
       <h1>Bienvenue sur votre site de sondage préféré. </h1>
@@ -20,16 +20,16 @@
         <div class="sondage">
 
           <div class="questions">
-            <img src="style/img/NBA.png">
+           <a href="question.php"><img src="style/img/NBA.png"></a>
             <p>QUI VA GAGNER LA SAISON 2021</p>
           </div>
           <div class="questions">
-            <img src="style/img/Roland_garos.png">
+          <a href="question.php"><img src="style/img/Roland_garos.png"></a>
             <p>QUI VA GAGNER LA SAISON 2021</p>
           </div>
           <div class="questions">
-            <img src="style/img/PSG.png">
-            <p>QUI VA GAGNER LA SAISON 2021</p>
+          <a href="question.php"><img src="style/img/PSG.png"></a>
+            <p>QUI VA GAGNER LA SAISON 2021</p></a>
           </div>
         </div>
 
@@ -41,7 +41,7 @@
         <div class="sondage">
 
           <div class="questions">
-            <img src="style/img/NBA.png">
+          <a href="question.php"><img src="style/img/NBA.png"></a>
             <div class="amis">
               <img src="style/img/man.jpg">
               <p>Thomas à répondu</p>
@@ -50,7 +50,7 @@
             <p>QUI VA GAGNER LA SAISON 2021</p>
           </div>
           <div class="questions">
-            <img src="style/img/Roland_garos.png">
+          <a href="question.php"><img src="style/img/Roland_garos.png"></a>
             <div class="amis">
               <img src="style/img/mamie.png">
               <p>Mamie à répondu</p>
@@ -58,7 +58,7 @@
             <p>QUI VA GAGNER LA SAISON 2021</p>
           </div>
           <div class="questions">
-            <img src="style/img/PSG.png">
+          <a href="question.php"><img src="style/img/PSG.png"></a>
             <div class="amis">
               <img src="style/img/mamie.png">
               <img src="style/img/man.jpg">
@@ -72,8 +72,8 @@
 
   </main>
 
-  <?php include 'footer.php' ?>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <?php include 'footer.php'?>
+
   <script src="js/main.js"></script>
 </body>
 

@@ -240,9 +240,7 @@ background-color: white;
     display: flex;
     flex-wrap: wrap;
 }
-.profil h1{
-    width: 100%;
-}
+
 .modif{
     display: flex;
     flex-direction: column;
@@ -273,4 +271,41 @@ background-color: white;
     text-align: center;
     margin-top: 97px;
     width: 50%;
+}
+/*---------------------------------ERREUR------*/
+
+#error{
+  width: 80%;
+  margin: auto;
+  
+    
+}
+
+#error h1{
+    text-align: center;
+    margin-top: 15%;
+}
+#error img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+}
+/*------------------------------ Sondage-----------------*/
+
+#sondageqst h1{
+    text-align: center;
+    padding: 15%;
+}
+
+#sondageqst{
+    background: linear-gradient(to bottom right,#f0da4b,#ff005E);  
+}
+#sondageqst label{
+    text-align: center;
+}
+#valide{
+    width: 100%;
+    margin: 10% auto;
+  
+    
 }
