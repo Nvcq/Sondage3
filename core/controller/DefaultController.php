@@ -10,8 +10,4 @@ abstract class DefaultController {
         require(self::VIEW_PATH . $viewName . ".php");
     }
 
-    // protected static function redirect(string $url) {
-    //     header()
-    // }
-
 }

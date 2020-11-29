@@ -8,7 +8,7 @@
     </head>
     <body>
         <?php
-            if($_SESSION['email']) {
+            if(isset($_SESSION['email'])) {
                 echo "<h1>Page d'accueil - Bonjour " . $_SESSION['pseudo'] . " !</h1>";
             } else {
                 echo "<h1>Page d'accueil - (Vous n'etes pas connecté) </h1>";
@@ -22,6 +22,7 @@
         <a href="?page=log">Se connecter</a> <br> <br>
         <a href="?page=logout">Se déconnecter</a> <br> <br>
         <a href="?page=profile">Consulter son profil</a> <br> <br>
+        <a href="?page=friend">Amis</a>
     </body>
 
 </html>

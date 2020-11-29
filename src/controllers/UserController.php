@@ -10,7 +10,7 @@ use Model\UserModel;
 class UserController extends DefaultController{
 
     public function displaySignPage() {
-        if($_SESSION['email']) {
+        if(isset($_SESSION['email'])) {
             echo 'Vous êtes déjà connecté';
         }
         else {
@@ -62,7 +62,7 @@ class UserController extends DefaultController{
 
 
     public function displayLogPage() {
-        if($_SESSION['email']) {
+        if(isset($_SESSION['email'])) {
             echo 'Vous êtes déjà connecté';
         }
         else {
@@ -127,7 +127,7 @@ class UserController extends DefaultController{
 
 
     public function displayProfilePage() {
-        if($_SESSION['email']) {
+        if(isset($_SESSION['email'])) {
             self::render("profile");
         }
         else {
@@ -138,7 +138,7 @@ class UserController extends DefaultController{
 
 
     public function displayChangeProfilePage() {
-        if($_SESSION['email']) {
+        if(isset($_SESSION['email'])) {
             self::render("changeProfile");
         }
         else {
@@ -152,23 +152,36 @@ class UserController extends DefaultController{
             
             if(password_verify($_POST["exPassword"], $_SESSION['password'])) {
 
-                $pwd = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                
-                $userData = UserModel::updateProfile(["firstname"=>$_POST['firstname'], "lastname"=>$_POST['lastname'], "pseudo"=>$_POST['pseudo'], "email"=>$_POST['email'], "password"=>$pwd, "user_id"=>$_SESSION['id'] ]); 
-                
-                if($userData) {
-                    $_SESSION['firstname'] = $_POST['firstname'];
-                    $_SESSION['lastname'] = $_POST['lastname'];
-                    $_SESSION['pseudo'] = $_POST['pseudo'];
-                    $_SESSION['email'] = $_POST['email'];
-                    $_SESSION['password'] = $pwd;
+                $checkEmail = null;
 
-                    Http::redirect("?page=profile");
+                if($_POST['email'] !== $_SESSION['email']) $checkEmail = UserModel::checkUser(["email"=>$_POST["email"]]);
+
+                if(!$checkEmail) {
+                    
+                    $pwd = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                
+                    $userData = UserModel::updateProfile(["firstname"=>$_POST['firstname'], "lastname"=>$_POST['lastname'], "pseudo"=>$_POST['pseudo'], "email"=>$_POST['email'], "password"=>$pwd, "user_id"=>$_SESSION['id'] ]); 
+                
+                    if($userData) {
+                        $_SESSION['firstname'] = $_POST['firstname'];
+                        $_SESSION['lastname'] = $_POST['lastname'];
+                        $_SESSION['pseudo'] = $_POST['pseudo'];
+                        $_SESSION['email'] = $_POST['email'];
+                        $_SESSION['password'] = $pwd;
+
+                        Http::redirect("?page=profile");
+                    }
+                    else {
+                        echo 'Erreur lors de la modification du profil';
+                        die();
+                    }
+
                 }
                 else {
-                    echo 'Erreur lors de la modification du profil';
+                    echo 'Cet email est déja pris !';
                     die();
                 }
+
             }
             else {
                 echo 'Mot de passe incorrect';
@@ -181,6 +194,86 @@ class UserController extends DefaultController{
         else {
             echo 'Vous devez compléter le formulaire pour accéder à cette page';
             die();
+        }
+    }
+
+
+
+    public function displayFriendPage() {
+
+        if(isset($_SESSION['email'])) {
+
+            $friends = UserModel::listingFriend(["id"=>$_SESSION['id']]);
+
+            $hasFriends = null;
+
+            if(!$friends) $hasFriends = "Vous n'avez pas d'amis !";
+
+            self::render("friend", compact("friends", "hasFriends"));
+            
+        }
+        else {
+            echo "Vous devez être connecté pour accéder à votre liste d'amis";
+            die();
+        }
+    }
+
+    public function removeFriend() {
+        if(isset($_SESSION['email']) && isset($_GET['id']) && is_numeric($_GET['id'])) {
+
+            $remove = UserModel::removeFriend(["asking"=>$_SESSION['id'], "asked"=>$_GET['id']]);
+
+            if($remove) {
+                Http::redirect("?page=friend");
+            }   
+            else {
+                echo "Erreur lors de la suppression de l'ami";
+            }         
+        }
+        else {
+            echo 'Vous ne pouvez pas accéder a cette page';
+        }
+    }
+
+
+    public function addFriend() {
+        if(isset($_SESSION['email']) && isset($_POST['email']) ) {
+
+            if($_POST['email'] === $_SESSION['email']) Http::redirect("?page=friend");
+            
+            $getId = UserModel::checkUser(["email"=>$_POST['email']]);
+
+            if($getId) {
+
+                $getId = $getId->user_id;
+                $getId = (int)$getId;
+
+                $check = UserModel::checkFriend(["asking"=>$_SESSION['id'], "asked"=>$getId]);
+
+                if(!$check) {
+
+                    $add = UserModel::addFriend(["asking"=>$_SESSION['id'], "asked"=>$getId]);
+
+                    if($add) {
+                        Http::redirect("?page=friend");
+                    }
+                    else {
+                        echo "Erreur lors de l'ajout de l'ami";
+                        die();
+                    }
+                }
+                else {
+                    echo "Vous êtes déjà ami avec cette personne";
+                }
+
+            }
+            else {
+                echo "Cet email ne correspond à aucun compte";
+                die();
+            }
+        }
+        else {
+            echo "Vous ne pouvez pas accéder a cette page";
         }
     }
 

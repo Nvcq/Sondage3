@@ -45,6 +45,21 @@ if(array_key_exists("page", $_GET)){
             $controller = new UserController();
             $controller->changeProfile();
             break;
+
+        case 'friend':
+            $controller = new UserController();
+            $controller->displayFriendPage();
+            break;
+
+        case 'removeFriend':
+            $controller = new UserController();
+            $controller->removeFriend();
+            break;
+
+        case 'addFriend':
+            $controller = new UserController();
+            $controller->addFriend();
+            break;
         
         default:
             echo "Mauvais url !";
