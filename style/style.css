@@ -318,6 +318,10 @@ background-color: white;
 #sondageqst label{
     text-align: center;
 }
+#sondageqst .btn{
+   align-items: center;
+   margin-left: 355px;
+}
 #valide{
     width: 40%;
     padding: 10px;
