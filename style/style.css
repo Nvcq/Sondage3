@@ -245,12 +245,13 @@ background-color: white;
     display: flex;
     flex-direction: column;
     margin: 30px;
+    padding: 50px;
 }
 .infoProfil{
     text-align: center;
     margin:40px;
     padding: 60px;
-    width: 50%;
+    width: 100%;
 }
 .infoProfil p{
     padding: 30px;
@@ -270,25 +271,37 @@ background-color: white;
 .modifProfil{
     text-align: center;
     margin-top: 97px;
-    width: 50%;
+    width: 100%;
+}
+
+.modifprofil{
+    background: linear-gradient(to bottom right,#f0da4b,#ff005E); 
 }
 /*---------------------------------ERREUR------*/
 
 #error{
-  width: 80%;
+  width: 100%;
   margin: auto;
-  
-    
+  background: linear-gradient(to bottom right,#f0da4b,#ff005E); 
+  text-align: center;   
 }
 
 #error h1{
     text-align: center;
-    margin-top: 15%;
+    padding: 2%;
 }
 #error img{
     display: block;
-    margin-left: auto;
-    margin-right: auto ;
+    margin: 40px auto 40px auto;
+    width: 20%;
+}
+.menu{
+    width: 20%;
+    padding: 10px;
+    margin: 80px;
+    border: 2px solid black;
+    border-radius: 36px;
+    background-color: white;
 }
 /*------------------------------ Sondage-----------------*/
 
@@ -298,14 +311,42 @@ background-color: white;
 }
 
 #sondageqst{
-    background: linear-gradient(to bottom right,#f0da4b,#ff005E);  
+    background: linear-gradient(to bottom right,#f0da4b,#ff005E); 
+    width: 100%;
+    margin: auto; 
 }
 #sondageqst label{
     text-align: center;
 }
 #valide{
-    width: 100%;
-    margin: 10% auto;
+    width: 40%;
+    padding: 10px;
+    margin: 100px auto;
+    border: 2px solid black;
+    border-radius: 36px;
+    background-color: white;
   
     
+}
+
+/*-------------- reponse----------*/ 
+
+.formulaire p {
+    padding: 20px; 
+    text-align: center;
+}
+#sondagereponse{
+    background: linear-gradient(to bottom right,#f0da4b,#ff005E); 
+    width: 100%;
+    margin: auto; 
+    text-align: center;
+}
+
+#sondagereponse h1{
+    text-align: center;
+    padding: 8%;
+}
+
+a{
+    text-decoration: none;
 }

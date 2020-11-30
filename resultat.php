@@ -8,7 +8,7 @@
     <title>Résultat</title>
 </head>
 <body>
-<?php require('inc/header.php') ;?>
+<?php require('header.php') ;?>
 
 <main>
     <section class="section1">
@@ -20,75 +20,27 @@
 <div class="sondage">
 
   <div class="questions">
-    <img src="style/img/NBA.png">
+  <a href="reponse.php"><img src="style/img/NBA.png">
     <p>QUI VA GAGNER LA SAISON 2021</p>
-    <br>
-           <ul>
-               <li>Lakers
-                   <p> 80%</p>
-               </li>
-               <li>Celtics
-               <p> 7%</p>
-               <img src="style/img/mamie.png" id="mamie">
-               <p class="humainText"> Mamie à répondue</p>
-               </li>
-               <li>Warriors
-               <p> 10%</p>
-               </li>
-               <li>Rockets
-               <p> 3%</p>
-               </li>
-           </ul>
+   
   </div>
   <div class="questions">
-    <img src="style/img/Roland_garos.png">
+  <a href="reponse.php"><img src="style/img/Roland_garos.png">
     <p>QUI VA GAGNER LA SAISON 2021</p>
-    <ul>
-               <li>Nadal
-                   <p> 80%</p>
-               </li>
-               <li>Sinner
-               <p> 7%</p>
-               
-               </li>
-               <li>Djokovic
-               <p> 10%</p>
-               </li>
-               <li>Gaston
-               <p> 3%</p>
-               </li>
-              
-           </ul>
+   
     
   </div>
   <div class="questions">
-    <img src="style/img/PSG.png">
+  <a href="reponse.php"><img src="style/img/PSG.png">
     <p>QUI VA GAGNER LA SAISON 2021</p>
-    <ul>
-               <li>Barcelona
-                   <p>55%</p>
-                   
-               </li>
-               <li>Juventus
-               <p>20%</p>
-               
-               </li>
-               <li>Bayern
-               <p>23%</p>
-               </li>
-               <li>OM
-               <p> 2%</p>
-               <img src="style/img/man.jpg" id="homme">
-                   <p class="humainText"> Thomas à répondu</p>
-               </li>
-           </ul>
+ 
   </div>
 </div>
 
 </article>
 </section>
 <section class="classement">
-<h2> Nos derniers sondages phares</h2>
+<h2> Le classement </h2>
     <article >
     <div class="tableau">
                 <div class='CLASSEMENT'>
@@ -157,7 +109,7 @@
 </section>
 </main>
     
- <?php require('inc/footer.php') ;?>
+ <?php require('footer.php') ;?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
