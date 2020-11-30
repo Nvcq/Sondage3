@@ -350,3 +350,51 @@ background-color: white;
 a{
     text-decoration: none;
 }
+
+/*------------------------ AMIS----------*/
+
+.ami{
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+
+}
+
+.mesAmi {
+
+    text-align: center;
+    margin: 200px 150px;
+}
+.mesAmi li{
+    padding: 0px;
+ 
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+   
+     
+}
+.mesAmi h1, p, a{
+    padding: 10px;
+}
+
+.plusami label{
+   padding: 5px;
+}
+.plusami input{
+    margin: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid black;
+
+ }
+
+h3{
+   margin: 30px;
+   font-size: 100px;
+   background:linear-gradient(to bottom right,#f0da4b,#ff005E); 
+   text-align: center;
+}
