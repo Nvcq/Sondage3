@@ -1,10 +1,38 @@
-<h1>Page d'inscription</h1>
-<br>
-<form action="?page=signed" method="POST">
-    <label for="firstname">Prénom : </label> <input type="text" name="firstname" required> <br> <br>
-    <label for="lastname">Nom : </label> <input type="text" name="lastname" required> <br> <br>
-    <label for="pseudo">Pseudo : </label> <input type="text" name="pseudo" required> <br> <br>
-    <label for="email">Email : </label> <input type="email" name="email" required> <br> <br>
-    <label for="password">Mot de passe : </label> <input type="password" name="password" required> <br> <br> <br>
-    <input type="submit" name="signup" value="S'inscrire">
-</form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= MAIN_PATH ?>/style/style.css">
+   
+    <title>Inscription</title>
+</head>
+<body>
+<?php require('inc/header.php') ;?>
+
+<main>
+<div id="fond">
+    <div class="page">
+        <h1>NEW ACCOUNT</h1>
+        <div class="form">
+            <form action="?page=signed" method="POST">
+                <input type="text" placeholder="Nom" name="lastname" class="btn" required>
+                <input type="text" placeholder="Prenom" name="firstname" class="btn" required>
+                <input type="email" placeholder="Email" name="email" class="btn" required>
+                <input type="text" name="pseudo" placeholder="Pseudo" class="btn" required>
+                <input type="password" placeholder="Password" name="password" class="btn" required>
+                <input type="submit" name="signup" value="S'inscrire" id="signIn">
+            </form>
+            
+        </div>
+        <img src="<?= MAIN_PATH ?>/img/connect.svg" id="connect">
+    </div>
+    </div>
+</main>
+
+    
+<?php require('inc/footer.php') ;?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="<?= MAIN_PATH ?>/js/main.js"></script>
+</body>
+</html>

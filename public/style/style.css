@@ -240,9 +240,6 @@ background-color: white;
     display: flex;
     flex-wrap: wrap;
 }
-.profil h1{
-    width: 100%;
-}
 .modif{
     display: flex;
     flex-direction: column;

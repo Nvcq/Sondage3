@@ -1,7 +1,10 @@
 <?php
 
 use Controller\HomeController;
+use Controller\SondageController;
 use Controller\UserController;
+use Model\ChatModel;
+use Model\SondageModel;
 
 if(array_key_exists("page", $_GET)){
     switch ($_GET['page']) {
@@ -59,6 +62,62 @@ if(array_key_exists("page", $_GET)){
         case 'addFriend':
             $controller = new UserController();
             $controller->addFriend();
+            break;
+
+        case 'createSondage':
+            $sondage = new SondageController();
+            $sondage->displayCreateSondagePage();
+            break;
+
+        case 'creating':
+            $sondage = new SondageController();
+            $sondage->createSondage();
+            break;
+
+        case 'mySondages':
+            $sondage = new SondageController();
+            $sondage->displayMySondagesPage();
+            break;
+
+        case 'friendSondages':
+            $sondage = new SondageController();
+            $sondage->displayFriendSondagesPage();
+            break;
+
+        case 'answer':
+            $sondage = new SondageController();
+            $sondage->displayAnswerPage();
+            break;
+
+        case 'postRep1':
+            $rep = new SondageModel();
+            $rep->postRep1($_POST);
+            break;
+
+        case 'postRep2':
+            $rep = new SondageModel();
+            $rep->postRep2($_POST);
+            break;
+
+        case 'getRep':
+            $rep = new SondageModel();
+            $rep->getRep($_POST);
+            break;
+
+        case 'result':
+            $sondage = new SondageController();
+            $sondage->displayResultPage();
+            break;
+
+
+        case 'postMessage':
+            $controller = new ChatModel();
+            $controller->postMessage($_POST);
+            break;
+
+        case 'getMessages':
+            $controller = new ChatModel();
+            $controller->getMessages($_POST);
             break;
         
         default:

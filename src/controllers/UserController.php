@@ -4,7 +4,6 @@ namespace Controller;
 
 use Core\Controller\DefaultController;
 use Core\Http;
-use Core\Model\DefaultModel;
 use Model\UserModel;
 
 class UserController extends DefaultController{

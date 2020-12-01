@@ -8,4 +8,5 @@ class HomeController extends DefaultController {
     public static function displayHomePage() {
         self::render("homepage");
     }
+    
 }
