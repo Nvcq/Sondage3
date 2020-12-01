@@ -64,13 +64,15 @@ h2{
 }
 .sondage{
 display: flex;
+flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 padding: 30px;
 
 }
+
 .questions{
-    width: 33%;
+    width: 15%;
     padding: 50px;
     background-color: white;
     border-radius: 20px;
