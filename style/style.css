@@ -72,12 +72,13 @@ padding: 30px;
 }
 
 .questions{
-    width: 15%;
+    width: 10%;
     padding: 50px;
     background-color: white;
     border-radius: 20px;
     margin: 50px;
     text-align: center;
+    font-size: 0.5em;
 
   
 }
