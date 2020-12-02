@@ -1,7 +1,5 @@
 let questions = $(".questions");
 
-
-
 questions.hover(
     function(){
         $(this).addClass("hover")

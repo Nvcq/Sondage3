@@ -19,7 +19,7 @@ $("#choice1").click(function(e){
         data:{rep, sondageId, user_id},
         success:function(response){
             $('form').css("display", "none");
-            $('#voted').html(`<p>Merci pour ton vote !</p> <br> <a href='?page=result&id=${sondageId}'>Voir les résultats de ce sondage</a>`);
+            $('#voted').html(`<p id="centerThx">Merci pour ton vote !</p> <br> <a href='?page=result&id=${sondageId}'>Voir les résultats de ce sondage</a>`);
         }
     })
 })
@@ -37,7 +37,7 @@ $("#choice2").click(function(e){
         data:{rep, sondageId, user_id},
         success:function(response){
             $('form').css("display", "none");
-            $('#voted').html(`<p>Merci pour ton vote !</p> <br> <a href='?page=result&id=${sondageId}'>Voir les résultats de ce sondage</a>`);
+            $('#voted').html(`<p id="centerThx">Merci pour ton vote !</p> <br> <a href='?page=result&id=${sondageId}'>Voir les résultats de ce sondage</a>`);
         }
     })
 })

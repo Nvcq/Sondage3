@@ -6,86 +6,70 @@ use Controller\UserController;
 use Model\ChatModel;
 use Model\SondageModel;
 
+$user = new UserController();
+$sondage = new SondageController();
+
+
 if(array_key_exists("page", $_GET)){
     switch ($_GET['page']) {
 
         case 'sign':
-            $controller = new UserController();
-            $controller->displaySignPage();
+            $user->displaySignPage();
             break;
 
         case 'signed':
-            $controller = new UserController();
-            $controller->sign();
+            $user->sign();
             break;
 
         case 'log':
-            $controller = new UserController();
-            $controller->displayLogPage();
+            $user->displayLogPage();
             break;
 
         case 'logged':
-            $controller = new UserController();
-            $controller->log();
+            $user->log();
             break;
 
         case 'logout':
-            $controller = new UserController();
-            $controller->logout();
+            $user->logout();
             break;
 
         case 'profile':
-            $controller = new UserController();
-            $controller->displayProfilePage();
+            $user->displayProfilePage();
             break;
 
         case 'changeProfile':
-            $controller = new UserController();
-            $controller->displayChangeProfilePage();
+            $user->displayChangeProfilePage();
             break;
 
         case 'changed':
-            $controller = new UserController();
-            $controller->changeProfile();
+            $user->changeProfile();
             break;
 
         case 'friend':
-            $controller = new UserController();
-            $controller->displayFriendPage();
+            $user->displayFriendPage();
             break;
 
         case 'removeFriend':
-            $controller = new UserController();
-            $controller->removeFriend();
+            $user->removeFriend();
             break;
 
         case 'addFriend':
-            $controller = new UserController();
-            $controller->addFriend();
+            $user->addFriend();
             break;
 
         case 'createSondage':
-            $sondage = new SondageController();
             $sondage->displayCreateSondagePage();
             break;
 
         case 'creating':
-            $sondage = new SondageController();
             $sondage->createSondage();
             break;
 
         case 'mySondages':
-            $sondage = new SondageController();
             $sondage->displayMySondagesPage();
             break;
 
-        case 'friendSondages':
-            $sondage = new SondageController();
-            $sondage->displayFriendSondagesPage();
-            break;
-
         case 'answer':
-            $sondage = new SondageController();
             $sondage->displayAnswerPage();
             break;
 
@@ -105,19 +89,18 @@ if(array_key_exists("page", $_GET)){
             break;
 
         case 'result':
-            $sondage = new SondageController();
             $sondage->displayResultPage();
             break;
 
 
         case 'postMessage':
-            $controller = new ChatModel();
-            $controller->postMessage($_POST);
+            $chat = new ChatModel();
+            $chat->postMessage($_POST);
             break;
 
         case 'getMessages':
-            $controller = new ChatModel();
-            $controller->getMessages($_POST);
+            $chat = new ChatModel();
+            $chat->getMessages($_POST);
             break;
         
         default:

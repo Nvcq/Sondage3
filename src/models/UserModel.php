@@ -58,7 +58,7 @@ class UserModel extends DefaultModel{
         $ddb = self::getDb();
 
         $query = $ddb->prepare(
-            "SELECT friend_asked, firstname, lastname, pseudo
+            "SELECT friend_asked, email, pseudo
             FROM friend
             INNER JOIN user ON friend.friend_asked = user.user_id
             WHERE friend_asking = :id"

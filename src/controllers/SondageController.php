@@ -58,7 +58,7 @@ class SondageController extends DefaultController {
 
             $hasSondages = null;
 
-            if(!$sondages) $hasSondages = "Vous n'avez pas crée de sondages";
+            if(!$sondages) $hasSondages = "Vous n'avez pas créé de sondages";
 
             self::render("sondages", compact("sondages", "hasSondages"));
 
@@ -67,25 +67,6 @@ class SondageController extends DefaultController {
             echo "Vous devez être connecté pour consulter vos sondages";
             die();
         }
-    }
-
-
-
-    public function displayFriendSondagesPage() {
-
-        if(isset($_SESSION['email'])) {
-            
-            $query = SondageModel::getFriendSondages(["id"=>$_SESSION['id']]);
-
-            self::render("friendSondages", compact("query"));
-
-            
-        }
-        else {
-            echo "Vous devez être connecté pour consulter les sondages de vos amis !";
-            die();
-        }
-
     }
 
 

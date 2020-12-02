@@ -1,14 +1,30 @@
-<h1>Entrez vos nouvelles informations : </h1> <br>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= MAIN_PATH ?>/style/style.css">
+   
+    <title>Profil</title>
+</head>
+<body>
+<?php require('inc/header.php') ;?>
 
-<form action="?page=changed" method="POST">
+<main class="modifprofil">
 
-    <label for="firstname">Prénom : </label> <input type="text" name="firstname" value="<?= $_SESSION["firstname"] ?>" required> <br> <br>
-    <label for="lastname">Nom : </label> <input type="text" name="lastname" value="<?= $_SESSION["lastname"] ?>" required> <br> <br>
-    <label for="pseudo">Pseudo : </label> <input type="text" name="pseudo" value="<?= $_SESSION["pseudo"] ?>" required> <br> <br>
-    <label for="email">Email : </label> <input type="email" name="email" value="<?= $_SESSION["email"] ?>" required> <br> <br>
-    <label for="password">Nouveau mot de passe (Remettez le même si vous ne souhaitez pas changer) : </label> <input type="password" name="password"> <br> <br> <br> <br> <br>
-    <label for="exPassword">Mot de passe : </label> <input type="password" name="exPassword">
-    <input type="submit" name="changeProfile" value="Enregistrer les modifications">
-    <input type="submit" name="cancelProfile" value="Annuler les modifications">
+    <form action="?page=changed" method="POST" class="modif">
+            <input type="text" placeholder="pseudo" name="pseudo" class="btn" value="<?= $_SESSION["pseudo"] ?>">
+            <input type="text" placeholder="nom" name="lastname" class="btn" value="<?= $_SESSION["lastname"] ?>">
+            <input type="text" placeholder="prenom" name="firstname" class="btn" value="<?= $_SESSION["firstname"] ?>">
+            <input type="email" placeholder="email" name="email" class="btn" value="<?= $_SESSION["email"] ?>">
+            <input type="password" placeholder="Nouveau mot de passe (remettez le même si vous ne voulez pas changer)" name="password" class="btn">
+            <input type="password" placeholder="Mot de passe" name="exPassword" class="btn">
+            <button class="menu" name="changeProfile">VALIDER LES MODIFICATIONS</button>
+            <button class="menu" name="cancelProfile">ANNULER LES MODIFICATIONS</button>
+    </form>
 
-</form>
+</main>
+
+<?php require('inc/footer.php') ;?>
+</body>
+</html>

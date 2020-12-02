@@ -64,24 +64,29 @@ h2{
 }
 .sondage{
 display: flex;
+flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 padding: 30px;
 
 }
+
 .questions{
-    width: 33%;
+    width: 15%;
     padding: 50px;
     background-color: white;
     border-radius: 20px;
     margin: 50px;
     text-align: center;
+    font-size: 1em;
 
   
 }
-.questions img{
-    width: 100%;
-    margin-bottom: 30px;
+.questions #q{
+    font-weight: bold;
+}
+.questions a {
+    font-style: italic;
 }
 .amis{
     display: flex;
@@ -114,6 +119,7 @@ footer{
     margin: auto;
     text-align: center;
     color:#ff005E;
+    
  
 }
 footer p {
@@ -151,6 +157,23 @@ footer p {
     margin: auto;
     display: flex;
     flex-direction: column;
+}
+.form #rep {
+    width: 100%;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: -50px;
+}
+.form #centerInput {
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+.form #voted {
+    text-align: center;
+    padding-bottom: 50px;
+}
+.form #reph1 {
+    padding-bottom: 50px;
 }
 .btn{
     border: solid 3px black;
@@ -240,16 +263,18 @@ background-color: white;
     display: flex;
     flex-wrap: wrap;
 }
+
 .modif{
     display: flex;
     flex-direction: column;
     margin: 30px;
+    padding: 50px;
 }
 .infoProfil{
     text-align: center;
     margin:40px;
     padding: 60px;
-    width: 50%;
+    width: 100%;
 }
 .infoProfil p{
     padding: 30px;
@@ -269,5 +294,150 @@ background-color: white;
 .modifProfil{
     text-align: center;
     margin-top: 97px;
-    width: 50%;
+    width: 100%;
+}
+
+.modifprofil{
+    background: linear-gradient(to bottom right,#f0da4b,#ff005E); 
+}
+/*---------------------------------ERREUR------*/
+
+#error{
+  width: 100%;
+  margin: auto;
+  background: linear-gradient(to bottom right,#f0da4b,#ff005E); 
+  text-align: center;   
+}
+
+#error h1{
+    text-align: center;
+    padding: 2%;
+}
+#error img{
+    display: block;
+    margin: 40px auto 40px auto;
+    width: 20%;
+}
+.menu{
+    width: 20%;
+    padding: 10px;
+    margin: 80px;
+    border: 2px solid black;
+    border-radius: 36px;
+    background-color: white;
+}
+/*------------------------------ Sondage-----------------*/
+
+#sondageqst h1{
+    text-align: center;
+    padding: 15%;
+}
+
+#sondageqst{
+    background: linear-gradient(to bottom right,#f0da4b,#ff005E); 
+    width: 100%;
+    margin: auto; 
+}
+#sondageqst label{
+    text-align: center;
+}
+#sondageqst .btn{
+   align-items: center;
+   margin-left: 355px;
+}
+#valide{
+    width: 40%;
+    padding: 10px;
+    margin: 100px auto;
+    border: 2px solid black;
+    border-radius: 36px;
+    background-color: white;
+  
+    
+}
+
+/*-------------- reponse----------*/ 
+
+.formulaire p {
+  
+    text-align: center;
+}
+.formulaire{
+    background-color: white;
+    border-radius: 26px;
+    width: 20%;
+    margin: auto;
+    padding: 4%;
+    
+}
+#sondagereponse{
+    background: linear-gradient(to bottom right,#f0da4b,#ff005E); 
+    width: 100%;
+    margin: auto; 
+    padding-top:50px;
+    padding-bottom:50px;
+    text-align: center;
+
+}
+
+#sondagereponse h1{
+    text-align: center;
+    padding: 8%;
+}
+
+a{
+    text-decoration: none;
+}
+
+#titre{
+    margin: 20px auto;
+    text-align: left;
+}
+
+/*------------------------ AMIS----------*/
+
+.ami{
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+
+}
+
+.mesAmi {
+
+    text-align: center;
+    margin: 200px 150px;
+}
+.mesAmi li{
+    padding: 0px;
+ 
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+   
+     
+}
+.mesAmi h1, p, a{
+    padding: 10px;
+}
+
+.plusami label{
+   padding: 5px;
+}
+.plusami input{
+    margin: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid black;
+
+ }
+
+h3{
+   margin: 30px;
+   font-size: 100px;
+   background:linear-gradient(to bottom right,#f0da4b,#ff005E); 
+   text-align: center;
 }

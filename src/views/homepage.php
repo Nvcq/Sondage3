@@ -12,14 +12,6 @@
 <body>
 <?php require('inc/header.php') ;?>
 
-<?php /*
-      $_SESSION['id'] = null;
-      $_SESSION['firstname'] = null;
-      $_SESSION['lastname'] = null;
-      $_SESSION['pseudo'] = null;
-      $_SESSION['email'] = null;
-      $_SESSION['password'] = null;
-      */ ?>
 
   <main>
     <section class="section1">
@@ -29,18 +21,22 @@
 
         <div class="sondage">
 
-          <div class="questions">
-            <img src="<?= MAIN_PATH ?>/img/NBA.png">
-            <p>QUI VA GAGNER LA SAISON 2021</p>
-          </div>
-          <div class="questions">
-            <img src="<?= MAIN_PATH ?>/img/Roland_garos.png">
-            <p>QUI VA GAGNER LA SAISON 2021</p>
-          </div>
-          <div class="questions">
-            <img src="<?= MAIN_PATH ?>/img/PSG.png">
-            <p>QUI VA GAGNER LA SAISON 2021</p>
-          </div>
+        <p><?= $hasSondages ?></p>
+        <?php if(!isset($_SESSION['email'])) echo '<p id="q">Vous devez vous connecter pour voir vos sondages</p>' ?>
+
+          <?php foreach($mine as $my): ?>
+
+            <div class="questions">
+
+              <p id="q">Question : <?= $my['question'] ?></p>
+
+                <p>Choix 1 : <?= $my['choice1'] ?></p> 
+
+                <p>Choix 2 : <?= $my['choice2'] ?></p> <br>
+
+                <a href="?page=result&id=<?= $my['sondage_id'] ?>">Voir les réponses</a>
+            </div>
+          <?php endforeach ?>
         </div>
 
       </article>
@@ -49,34 +45,34 @@
       <h2> Les sondages de vos amis </h2>
       <article>
         <div class="sondage">
+        
+        <p><?= $hasFriendSondages ?></p>
+        <?php if(!isset($_SESSION['email'])) echo '<p id="q">Vous devez vous connecter pour voir les sondages de vos amis</p>' ?>
 
-          <div class="questions">
-            <img src="<?= MAIN_PATH ?>/img/NBA.png">
-            <div class="amis">
-              <img src="<?= MAIN_PATH ?>/img/man.jpg">
-              <p>Thomas à répondu</p>
+          <?php foreach($friends as $friend) { ?>
+
+            <div class="questions">
+              <h4>Créer par <?= $friend['pseudo'] ?>, <?php if($friend['time'] > 0 ) {
+              echo " plus que " . $friend['time'] . " heures pour répondre !";
+              } else {
+              echo "le sondage est terminé...";
+              }  ?></h4><br> <hr>
+              <p id="q">Question : <?= $friend['question'] ?></p>
+
+              <p>Choix 1 : <?= $friend['choice1'] ?></p> 
+
+              <p>Choix 2 : <?= $friend['choice2'] ?></p> <br>
+
+              <a href="?page=answer&id=<?= $friend['sondage_id'] ?>">Répondre</a> <br><br>
+              <a href="?page=result&id=<?= $friend['sondage_id'] ?>">Voir les résultats</a>
             </div>
 
-            <p>QUI VA GAGNER LA SAISON 2021</p>
-          </div>
-          <div class="questions">
-            <img src="<?= MAIN_PATH ?>/img/Roland_garos.png">
-            <div class="amis">
-              <img src="<?= MAIN_PATH ?>/img/mamie.png">
-              <p>Mamie à répondu</p>
-            </div>
-            <p>QUI VA GAGNER LA SAISON 2021</p>
-          </div>
-          <div class="questions">
-            <img src="<?= MAIN_PATH ?>/img/PSG.png">
-            <div class="amis">
-              <img src="<?= MAIN_PATH ?>/img/mamie.png">
-              <img src="<?= MAIN_PATH ?>/img/man.jpg">
-              <p>Mamie + 1 autre personne à répondu</p>
-            </div>
-            <p>QUI VA GAGNER LA SAISON 2021</p>
-          </div>
+          <?php } ?>   
+
         </div>
+
+
+
       </article>
     </section>
 

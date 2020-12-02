@@ -11,7 +11,7 @@ class DefaultModel{
         );
     }
 
-//             /!\   A CHANGER EN FONCTION DE SA PROPRE CONNECTION A LA BDD    /!\
+//             /!\   A CHANGER EN FONCTION DE SA PROPRE CONNEXION A LA BDD    /!\
 
 
 }

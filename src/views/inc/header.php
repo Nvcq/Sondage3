@@ -8,8 +8,8 @@
 
             <?php 
                 if(isset($_SESSION['email'])) {
-                    echo '<li><a href="?page=profile">Bonjour ' . $_SESSION["pseudo"] . ' !</a></li>';
                     echo '<li><a href="?page=logout">Se déconnecter</a></li>';
+                    echo '<li><a href="?page=profile">Bonjour ' . $_SESSION["pseudo"] . ' !</a></li>';
                    // echo '<li><a href="?page=logout">Se déconnecter</a></li>';
                 }
                 else {
