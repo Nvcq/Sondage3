@@ -12,7 +12,8 @@ class SondageController extends DefaultController {
             self::render("createSondage");
         }
         else {
-            echo "Vous devez être connecté pour créer un sondage";
+            $msgError = "Vous devez être connecté pour créer un sondage";
+            self::render("inc/error", compact("msgError"));
             die();
         }
     }
@@ -37,13 +38,15 @@ class SondageController extends DefaultController {
                 Http::redirect("");
             }
             else {
-                echo "Erreur lors de la création du sondage";
+                $msgError = "Erreur lors de la création du sondage";
+                self::render("inc/error", compact("msgError"));
                 die();
             }
 
         }
         else {
-            echo "Vous devez compléter le formulaire de création de sondage !";
+            $msgError = "Vous devez compléter le formulaire de création de sondage !";
+            self::render("inc/error", compact("msgError"));
             die();
         }
     }
@@ -64,7 +67,8 @@ class SondageController extends DefaultController {
 
         }
         else {
-            echo "Vous devez être connecté pour consulter vos sondages";
+            $msgError = "Vous devez être connecté pour consulter vos sondages";
+            self::render("inc/error", compact("msgError"));
             die();
         }
     }
@@ -72,7 +76,8 @@ class SondageController extends DefaultController {
 
     public function displayAnswerPage() {
         if(!isset($_GET['id'])) {
-            echo 'Vous ne pouvez pas accéder a cette page';
+            $msgError = 'Vous ne pouvez pas accéder a cette page';
+            self::render("inc/error", compact("msgError"));
             die();
         }
         else {
@@ -84,7 +89,8 @@ class SondageController extends DefaultController {
                 $check = SondageModel::checkIfAnswered(["sondage_id"=>$_GET['id'], "user_id"=>$_SESSION['id']]);
 
                 if($check) {
-                    echo 'Vous avez déja répondu a ce sondage';
+                    $msgError = 'Vous avez déja répondu a ce sondage';
+                    self::render("inc/error", compact("msgError"));
                     die();                
                 }
                 else {
@@ -93,7 +99,8 @@ class SondageController extends DefaultController {
                 }
             }
             else {
-                echo "c'est plus dispo ntm";
+                $msgError = "Ce sondage est clôturé";
+                self::render("inc/error", compact("msgError"));
                 die();
             }
         }
@@ -112,13 +119,11 @@ class SondageController extends DefaultController {
             
         }
         else {
-            echo "Vous n'avez pas accès à cette page";
+            $msgError = "Vous n'avez pas accès à cette page";
+            self::render("inc/error", compact("msgError"));
             die();
         }
         
-
     }
-
- 
 
 }

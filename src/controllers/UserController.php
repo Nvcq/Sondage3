@@ -10,7 +10,9 @@ class UserController extends DefaultController{
 
     public function displaySignPage() {
         if(isset($_SESSION['email'])) {
-            echo 'Vous êtes déjà connecté';
+            $msgError = 'Vous êtes déjà connecté';
+            self::render("inc/error", compact("msgError"));
+            die();
         }
         else {
             self::render("sign");
@@ -41,19 +43,22 @@ class UserController extends DefaultController{
                     Http::redirect("?page=log");
                 }
                 else {
-                    echo "Erreur lors de l'inscription !";
+                    $msgError = "Erreur lors de l'inscription !";
+                    self::render("inc/error", compact("msgError"));
                     die();
                 }
 
             }
             else {
-                echo "Ce compte existe déjà !";
+                $msgError = "Ce compte existe déjà !";
+                self::render("inc/error", compact("msgError"));
                 die();
             }
 
         } 
         else {
-            self::render("errors/signError");
+            $msgError = "Vous devez passer par le formulaire d'inscription";
+            self::render("inc/error", compact("msgError"));
             die();
         }
     }
@@ -62,7 +67,9 @@ class UserController extends DefaultController{
 
     public function displayLogPage() {
         if(isset($_SESSION['email'])) {
-            echo 'Vous êtes déjà connecté';
+            $msgError = 'Vous êtes déjà connecté';
+            self::render("inc/error", compact("msgError"));
+            die();
         }
         else {
             self::render("log");
@@ -94,19 +101,22 @@ class UserController extends DefaultController{
                     Http::redirect("");
                 }
                 else {
-                    echo 'identifiant ou mot de passe incorrect';
+                    $msgError = 'identifiant ou mot de passe incorrect';
+                    self::render("inc/error", compact("msgError"));
                     die();
                 }
 
             }
             else {
-                echo "Email incorrect";
+                $msgError = "Email incorrect";
+                self::render("inc/error", compact("msgError"));
                 die();
             }
             
         }
         else {
-            self::render("errors/logError");
+            $msgError = "Vous devez passer par le formulaire de connexion";
+            self::render("inc/error", compact("msgError"));
             die();
         }
 
@@ -130,7 +140,8 @@ class UserController extends DefaultController{
             self::render("profile");
         }
         else {
-            echo "Vous devez vous connecter pour pouvoir accéder a votre profil";
+            $msgError = "Vous devez vous connecter pour pouvoir accéder a votre profil";
+            self::render("inc/error", compact("msgError"));
             die();
         }
     }
@@ -141,7 +152,8 @@ class UserController extends DefaultController{
             self::render("changeProfile");
         }
         else {
-            echo "Vous devez vous connecter pour pouvoir modifier votre profil";
+            $msgError = "Vous devez vous connecter pour pouvoir modifier votre profil";
+            self::render("inc/error", compact("msgError"));
             die();
         }
     }
@@ -171,19 +183,22 @@ class UserController extends DefaultController{
                         Http::redirect("?page=profile");
                     }
                     else {
-                        echo 'Erreur lors de la modification du profil';
+                        $msgError = 'Erreur lors de la modification du profil';
+                        self::render("inc/error", compact("msgError"));
                         die();
                     }
 
                 }
                 else {
-                    echo 'Cet email est déja pris !';
+                    $msgError = 'Cet email est déja pris !';
+                    self::render("inc/error", compact("msgError"));
                     die();
                 }
 
             }
             else {
-                echo 'Mot de passe incorrect';
+                $msgError = 'Mot de passe incorrect';
+                self::render("inc/error", compact("msgError"));
                 die();
             }
         }
@@ -191,7 +206,8 @@ class UserController extends DefaultController{
             Http::redirect("?page=profile");
         }
         else {
-            echo 'Vous devez compléter le formulaire pour accéder à cette page';
+            $msgError = 'Vous devez compléter le formulaire pour accéder à cette page';
+            self::render("inc/error", compact("msgError"));
             die();
         }
     }
@@ -212,7 +228,8 @@ class UserController extends DefaultController{
             
         }
         else {
-            echo "Vous devez être connecté pour accéder à votre liste d'amis";
+            $msgError = "Vous devez être connecté pour accéder à votre liste d'amis";
+            self::render("inc/error", compact("msgError"));
             die();
         }
     }
@@ -226,11 +243,15 @@ class UserController extends DefaultController{
                 Http::redirect("?page=friend");
             }   
             else {
-                echo "Erreur lors de la suppression de l'ami";
+                $msgError = "Erreur lors de la suppression de l'ami";
+                self::render("inc/error", compact("msgError"));
+                die();
             }         
         }
         else {
-            echo 'Vous ne pouvez pas accéder a cette page';
+            $msgError = 'Vous ne pouvez pas accéder a cette page';
+            self::render("inc/error", compact("msgError"));
+            die();
         }
     }
 
@@ -257,22 +278,28 @@ class UserController extends DefaultController{
                         Http::redirect("?page=friend");
                     }
                     else {
-                        echo "Erreur lors de l'ajout de l'ami";
+                        $msgError = "Erreur lors de l'ajout de l'ami";
+                        self::render("inc/error", compact("msgError"));
                         die();
                     }
                 }
                 else {
-                    echo "Vous êtes déjà ami avec cette personne";
+                    $msgError = "Vous êtes déjà ami avec cette personne";
+                    self::render("inc/error", compact("msgError"));
+                    die();
                 }
 
             }
             else {
-                echo "Cet email ne correspond à aucun compte";
+                $msgError = "Cet email ne correspond à aucun compte";
+                self::render("inc/error", compact("msgError"));
                 die();
             }
         }
         else {
-            echo "Vous ne pouvez pas accéder a cette page";
+            $msgError = "Vous ne pouvez pas accéder a cette page";
+            self::render("inc/error", compact("msgError"));
+            die();
         }
     }
 

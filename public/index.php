@@ -5,5 +5,4 @@ require("../configuration/config.php");
 
 session_start();
 
-
 require '../router.php';

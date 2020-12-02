@@ -21,22 +21,24 @@
 
         <div class="sondage">
 
-        <p><?= $hasSondages ?></p>
+        <p><?php if(isset($_SESSION['email'])) echo $hasSondages; ?></p>
         <?php if(!isset($_SESSION['email'])) echo '<p id="q">Vous devez vous connecter pour voir vos sondages</p>' ?>
 
-          <?php foreach($mine as $my): ?>
+          <?php if(isset($_SESSION['email'])) {
+              foreach($mine as $my) { ?>
 
-            <div class="questions">
-
-              <p id="q">Question : <?= $my['question'] ?></p>
-
-                <p>Choix 1 : <?= $my['choice1'] ?></p> 
-
-                <p>Choix 2 : <?= $my['choice2'] ?></p> <br>
-
-                <a href="?page=result&id=<?= $my['sondage_id'] ?>">Voir les réponses</a>
-            </div>
-          <?php endforeach ?>
+                <div class="questions">
+    
+                  <p id="q">Question : <?= $my['question'] ?></p>
+    
+                    <p>Choix 1 : <?= $my['choice1'] ?></p> 
+    
+                    <p>Choix 2 : <?= $my['choice2'] ?></p> <br>
+    
+                    <a href="?page=result&id=<?= $my['sondage_id'] ?>">Voir les réponses</a>
+                </div>
+              <?php }  }?>
+          
         </div>
 
       </article>
@@ -46,32 +48,31 @@
       <article>
         <div class="sondage">
         
-        <p><?= $hasFriendSondages ?></p>
+        <p><?php if(isset($_SESSION['email'])) echo $hasFriendSondages; ?></p>
         <?php if(!isset($_SESSION['email'])) echo '<p id="q">Vous devez vous connecter pour voir les sondages de vos amis</p>' ?>
 
-          <?php foreach($friends as $friend) { ?>
+          <?php if(isset($_SESSION['email'])) {
+            foreach($friends as $friend) { ?>
 
-            <div class="questions">
-              <h4>Créer par <?= $friend['pseudo'] ?>, <?php if($friend['time'] > 0 ) {
-              echo " plus que " . $friend['time'] . " heures pour répondre !";
-              } else {
-              echo "le sondage est terminé...";
-              }  ?></h4><br> <hr>
-              <p id="q">Question : <?= $friend['question'] ?></p>
-
-              <p>Choix 1 : <?= $friend['choice1'] ?></p> 
-
-              <p>Choix 2 : <?= $friend['choice2'] ?></p> <br>
-
-              <a href="?page=answer&id=<?= $friend['sondage_id'] ?>">Répondre</a> <br><br>
-              <a href="?page=result&id=<?= $friend['sondage_id'] ?>">Voir les résultats</a>
-            </div>
-
-          <?php } ?>   
-
+              <div class="questions">
+                <h4>Créer par <?= $friend['pseudo'] ?>, <?php if($friend['time'] > 0 ) {
+                echo " plus que " . $friend['time'] . " heures pour répondre !";
+                } else {
+                echo "le sondage est terminé...";
+                }  ?></h4><br> <hr>
+                <p id="q">Question : <?= $friend['question'] ?></p>
+  
+                <p>Choix 1 : <?= $friend['choice1'] ?></p> 
+  
+                <p>Choix 2 : <?= $friend['choice2'] ?></p> <br>
+  
+                <a href="?page=answer&id=<?= $friend['sondage_id'] ?>">Répondre</a> <br><br>
+                <a href="?page=result&id=<?= $friend['sondage_id'] ?>">Voir les résultats</a>
+              </div>
+  
+            <?php } } ?>
+                     
         </div>
-
-
 
       </article>
     </section>
