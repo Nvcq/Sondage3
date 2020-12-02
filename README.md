@@ -10,4 +10,4 @@ Pour utiliser le site :
 /!\ Si vous utilisez Firefox il est possible que l'input "datetime-local" pour créer un sondage ne marche pas /!\
 
 
-## Par Nicolas MOPIN, Ugur Saymaz et Margaux MALSCH
+## Par Nicolas MOPIN, Ugur SAYMAZ et Margaux MALSCH
