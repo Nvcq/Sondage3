@@ -39,74 +39,7 @@
 
 </article>
 </section>
-<section class="classement">
-<h2> Le classement </h2>
-    <article >
-    <div class="tableau">
-                <div class='CLASSEMENT'>
-                    <ul>
-                    <li>
-                            <h3>RANG</h3>
-                        </li>
-                        <li>
-                            <h4>1</h4>
-                        </li>
-                        <li>
-                            <h4>2</h4>
-                        </li>
-                        <li>
-                            <h4>3</h4>
-                        </li>
 
-                    </ul>
-                </div>
-                <div class='PSEUDO'>
-                    <ul>
-                        <li>
-                            <h3>PSEUDO</h3>
-                        </li>
-                        
-                       
-                        <li>
-                            <h4>Thomas</h4>
-                        </li>
-                        <li>
-                            <h4>Moi</h4>
-                        </li>
-                        <li>
-                            <h4>Mamie</h4>
-                        </li>
-
-
-                    </ul>
-                </div>
-               
-                <div class='POINTS'>
-                    <ul>
-                        <li>
-                            <h3>POINTS</h3>
-                        </li>
-                        <li >
-                            <h4>500</h4>
-                        </li>
-                        <li >
-                            <h4>250</h4>
-                        </li>
-                        <li >
-                            <h4>100</h4>
-                        </li>
-                        
-
-                    </ul>
-                </div>
-                
-
-
-            </div>
-        </div>
-        </div>
-    </article>
-</section>
 </main>
     
  <?php require('footer.php') ;?>

@@ -117,6 +117,7 @@ footer{
     margin: auto;
     text-align: center;
     color:#ff005E;
+    
  
 }
 footer p {
@@ -339,14 +340,25 @@ background-color: white;
 /*-------------- reponse----------*/ 
 
 .formulaire p {
-    padding: 20px; 
+  
     text-align: center;
+}
+.formulaire{
+    background-color: white;
+    border-radius: 26px;
+    width: 20%;
+    margin: auto;
+    padding: 4%;
+    
 }
 #sondagereponse{
     background: linear-gradient(to bottom right,#f0da4b,#ff005E); 
     width: 100%;
     margin: auto; 
+    padding-top:50px;
+    padding-bottom:50px;
     text-align: center;
+
 }
 
 #sondagereponse h1{
@@ -356,6 +368,11 @@ background-color: white;
 
 a{
     text-decoration: none;
+}
+
+#titre{
+    margin: 20px auto;
+    text-align: left;
 }
 
 /*------------------------ AMIS----------*/

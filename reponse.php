@@ -13,16 +13,25 @@
 <?php include 'header.php' ?>
   <main id="sondagereponse">
   <div class="formulaire">
-        <h1>QUESTION</h1>
-          <p>Reponse 1</p>
-          <p>Reponse 2</p>
-          <p>Reponse 3</p>
-          <p>Reponse 4</p>
+        <h5>choix1</h5>
+        <h5>choix2</h5>
+        <h6>TOTAL</h6>
+        <p>A repondu</p>
+         
            
   </div>
-  <div>
-      <br>
-    <p>ICI FAUT METTRE LE TCHAT ZEBI</p>
+  <div id="titre">
+  <h2> TCHAT</h2>
+  </div>
+
+  <div class="formulaire">
+    <br>
+    <p>personne qui fais blabla1</p>
+    <p>personne qui fais blabla2</p>
+    <form action="" class="plusami">
+    <input type="text" placeholder="Ecrire" name="message">
+    <button id="envoyer">Envoyer</button>
+</form>
     <br>
 </div>
   </main>
